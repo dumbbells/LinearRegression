@@ -44,6 +44,7 @@ for groups in range(len(lambdas)):
         rmse = getRMSE(b0, b1, testData, lambdas[groups])
         if (localBestRMSE > rmse):
             bestWeights[groups] = [b0, b1]
+            localBestRMSE = rmse
         totalRMSE += rmse
         print("Weights:\n\tw0: {}\n\tw1: {}\nRMSE: {}\n".format(b0, b1, rmse))
     print("Total RMSE: {}\n".format(totalRMSE))
